@@ -1,2 +1,57 @@
-
 /*  Put your CSS Here */
+
+#disc1 {
+  width: 250px;
+  height: 50px;
+  background-color: red;
+}
+
+#disc2 {
+  width: 200px;
+  height: 50px;
+  background-color: orange;
+}
+
+#disc3 {
+  width: 150px;
+  height: 50px;
+  background-color: yellow;
+}
+
+#disc4 {
+  width: 100px;
+  height: 50px;
+  background-color: green;
+}
+
+#placeholder {
+  height: 200px;
+  display: flex;
+  justify-content: center;
+}
+
+#container {
+  display: flex;
+  flex-basis: 1, 1, auto;
+}
+
+#divA {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  width: 33%;
+}
+
+#divB {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  width: 33%;
+}
+
+#divC {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  width: 33%;
+}
