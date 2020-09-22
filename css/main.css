@@ -42,6 +42,7 @@
   font-family: Verdana;
   font-weight: bolder;
   font-size: large;
+
   display: flex;
   flex-basis: 1, 1, auto;
 }
@@ -81,4 +82,37 @@ h1 {
   height: 250px;
   max-width: 10px;
   margin: 0 250px 0 200px;
+}
+
+#towerText {
+  display: flex;
+  justify-content: space-evenly;
+  border: 2px solid black;
+}
+
+#t1 {
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+  font-family: roboto;
+  font-weight: bolder;
+  font-size: larger;
+}
+
+#t2 {
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+  font-family: roboto;
+  font-weight: bolder;
+  font-size: larger;
+}
+
+#t3 {
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+  font-family: roboto;
+  font-weight: bolder;
+  font-size: larger;
 }

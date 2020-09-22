@@ -73,15 +73,3 @@ function moveDiscToTower(clickDiscEvent) {
     placeholderSection.append(displayWin);
   }
 }
-
-//if (placeholderSection.childElementCount > 0) {
-//divA.append(placeholderSection.lastElementChild);
-
-//refactor ideas
-//towerA.addEventListener("dblclick", moveDiscToTower){
-//if (placeholderSection.lastElementChild.clientWidth <
-//towerA.lastElementChild.clientWidth) {
-//towerA.append(placeholderSection.lastElementChild)
-//}
-
-//}
