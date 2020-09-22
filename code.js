@@ -12,11 +12,11 @@ towerC.addEventListener("click", moveDiscToPlaceholder);
 
 function moveDiscToPlaceholder(clickDiscEvent) {
   if (placeholderSection.childElementCount < 1) {
-    if ((clickDiscEvent.currentTarget.id = "divA")) {
+    if (clickDiscEvent.currentTarget.id == "divA") {
       placeholderSection.append(divA.lastElementChild);
-    } else if ((clickDiscEvent.currentTarget.id = "divB")) {
+    } else if (clickDiscEvent.currentTarget.id == "divB") {
       placeholderSection.append(divB.lastElementChild);
-    } else if ((clickDiscEvent.currentTarget.id = "divC")) {
+    } else if (clickDiscEvent.currentTarget.id == "divC") {
       placeholderSection.append(divC.lastElementChild);
     }
   } else if (placeholderSection.childElementCount >= 1) {
@@ -27,6 +27,9 @@ function moveDiscToPlaceholder(clickDiscEvent) {
 towerA.addEventListener("dblclick", moveDiscToTower);
 towerB.addEventListener("dblclick", moveDiscToTower);
 towerC.addEventListener("dblclick", moveDiscToTower);
+
+let displayWin = document.createElement("h1");
+displayWin.innerText = "You win!";
 
 function moveDiscToTower(clickDiscEvent) {
   if (
@@ -65,6 +68,9 @@ function moveDiscToTower(clickDiscEvent) {
       towerC.lastElementChild.clientWidth
   ) {
     towerC.append(placeholderSection.lastElementChild);
+  }
+  if (towerC.childElementCount == 4) {
+    placeholderSection.append(displayWin);
   }
 }
 
