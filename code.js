@@ -10,13 +10,13 @@ towerA.addEventListener("click", moveDiscToPlaceholder);
 towerB.addEventListener("click", moveDiscToPlaceholder);
 towerC.addEventListener("click", moveDiscToPlaceholder);
 
-function moveDiscToPlaceholder(clickDiscEvent) {
+function moveDiscToPlaceholder(event) {
   if (placeholderSection.childElementCount < 1) {
-    if (clickDiscEvent.currentTarget.id == "divA") {
+    if (event.currentTarget.id == "divA") {
       placeholderSection.append(divA.lastElementChild);
-    } else if (clickDiscEvent.currentTarget.id == "divB") {
+    } else if (event.currentTarget.id == "divB") {
       placeholderSection.append(divB.lastElementChild);
-    } else if (clickDiscEvent.currentTarget.id == "divC") {
+    } else if (event.currentTarget.id == "divC") {
       placeholderSection.append(divC.lastElementChild);
     }
   } else if (placeholderSection.childElementCount >= 1) {
@@ -30,6 +30,15 @@ towerC.addEventListener("dblclick", moveDiscToTower);
 
 let displayWin = document.createElement("h1");
 displayWin.innerText = "You win!";
+
+let playAgain = document.createElement("button");
+playAgain.innerText = "Click here to play again.";
+
+playAgain.addEventListener("click", replayGame);
+
+function replayGame() {
+  location.reload();
+}
 
 function moveDiscToTower(clickDiscEvent) {
   if (placeholderSection.childElementCount > 0) {
@@ -72,6 +81,7 @@ function moveDiscToTower(clickDiscEvent) {
     }
     if (towerC.childElementCount == 4) {
       placeholderSection.append(displayWin);
+      displayWin.append(playAgain);
     }
   }
 }
