@@ -6,6 +6,12 @@ const towerC = document.getElementById("divC");
 
 const placeholderSection = document.getElementById("placeholder");
 
+let numMoves = 0;
+
+let numMovesDisplay = document.getElementById("numberMoves");
+numMovesDisplay.innerText = "Number of moves made: " + numMoves;
+document.body.prepend(numMovesDisplay);
+
 towerA.addEventListener("click", moveDiscToPlaceholder);
 towerB.addEventListener("click", moveDiscToPlaceholder);
 towerC.addEventListener("click", moveDiscToPlaceholder);
@@ -19,6 +25,10 @@ function moveDiscToPlaceholder(event) {
     } else if (event.currentTarget.id == "divC") {
       placeholderSection.append(divC.lastElementChild);
     }
+    numMoves++;
+    let numMovesDisplay = document.getElementById("numberMoves");
+    numMovesDisplay.innerText = "Number of moves made: " + numMoves;
+    document.body.prepend(numMovesDisplay);
   } else if (placeholderSection.childElementCount >= 1) {
     return;
   }
@@ -41,47 +51,45 @@ function replayGame() {
 }
 
 function moveDiscToTower(clickDiscEvent) {
-  if (placeholderSection.childElementCount > 0) {
-    if (
-      clickDiscEvent.currentTarget.id == "divA" &&
-      towerA.childElementCount < 1
-    ) {
-      towerA.append(placeholderSection.lastElementChild);
-    } // check to see if disc div is wider than lastElementChild of tower
-    else if (
-      clickDiscEvent.currentTarget.id == "divA" &&
-      placeholderSection.lastElementChild.clientWidth <
-        towerA.lastElementChild.clientWidth
-    ) {
-      towerA.append(placeholderSection.lastElementChild);
-    } else if (
-      clickDiscEvent.currentTarget.id == "divB" &&
-      towerB.childElementCount < 1
-    ) {
-      towerB.append(placeholderSection.lastElementChild);
-    } // check to see if disc div is wider than lastElementChild of tower
-    else if (
-      clickDiscEvent.currentTarget.id == "divB" &&
-      placeholderSection.lastElementChild.clientWidth <
-        towerB.lastElementChild.clientWidth
-    ) {
-      towerB.append(placeholderSection.lastElementChild);
-    } else if (
-      clickDiscEvent.currentTarget.id == "divC" &&
-      towerC.childElementCount < 1
-    ) {
-      towerC.append(placeholderSection.lastElementChild);
-    } // check to see if disc div is wider than lastElementChild of tower
-    else if (
-      clickDiscEvent.currentTarget.id == "divC" &&
-      placeholderSection.lastElementChild.clientWidth <
-        towerC.lastElementChild.clientWidth
-    ) {
-      towerC.append(placeholderSection.lastElementChild);
-    }
-    if (towerC.childElementCount == 4) {
-      placeholderSection.append(displayWin);
-      displayWin.append(playAgain);
-    }
+  if (
+    clickDiscEvent.currentTarget.id == "divA" &&
+    towerA.childElementCount < 1
+  ) {
+    towerA.append(placeholderSection.lastElementChild);
+  } // check to see if disc div is wider than lastElementChild of tower
+  else if (
+    clickDiscEvent.currentTarget.id == "divA" &&
+    placeholderSection.lastElementChild.clientWidth <
+      towerA.lastElementChild.clientWidth
+  ) {
+    towerA.append(placeholderSection.lastElementChild);
+  } else if (
+    clickDiscEvent.currentTarget.id == "divB" &&
+    towerB.childElementCount < 1
+  ) {
+    towerB.append(placeholderSection.lastElementChild);
+  } // check to see if disc div is wider than lastElementChild of tower
+  else if (
+    clickDiscEvent.currentTarget.id == "divB" &&
+    placeholderSection.lastElementChild.clientWidth <
+      towerB.lastElementChild.clientWidth
+  ) {
+    towerB.append(placeholderSection.lastElementChild);
+  } else if (
+    clickDiscEvent.currentTarget.id == "divC" &&
+    towerC.childElementCount < 1
+  ) {
+    towerC.append(placeholderSection.lastElementChild);
+  } // check to see if disc div is wider than lastElementChild of tower
+  else if (
+    clickDiscEvent.currentTarget.id == "divC" &&
+    placeholderSection.lastElementChild.clientWidth <
+      towerC.lastElementChild.clientWidth
+  ) {
+    towerC.append(placeholderSection.lastElementChild);
+  }
+  if (towerC.childElementCount == 4) {
+    placeholderSection.append(displayWin);
+    displayWin.append(playAgain);
   }
 }
