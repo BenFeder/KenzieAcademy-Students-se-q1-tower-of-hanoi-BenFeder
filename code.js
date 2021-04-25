@@ -51,40 +51,28 @@ function replayGame() {
 }
 
 function moveDiscToTower(clickDiscEvent) {
-  if (
-    clickDiscEvent.currentTarget.id == "divA" &&
-    towerA.childElementCount < 1
-  ) {
+  if (clickDiscEvent.currentTarget.id == "divA" && towerA.childElementCount < 1) {
     towerA.append(placeholderSection.lastElementChild);
   } // check to see if disc div is wider than lastElementChild of tower
   else if (
     clickDiscEvent.currentTarget.id == "divA" &&
-    placeholderSection.lastElementChild.clientWidth <
-      towerA.lastElementChild.clientWidth
+    placeholderSection.lastElementChild.clientWidth < towerA.lastElementChild.clientWidth
   ) {
     towerA.append(placeholderSection.lastElementChild);
-  } else if (
-    clickDiscEvent.currentTarget.id == "divB" &&
-    towerB.childElementCount < 1
-  ) {
+  } else if (clickDiscEvent.currentTarget.id == "divB" && towerB.childElementCount < 1) {
     towerB.append(placeholderSection.lastElementChild);
   } // check to see if disc div is wider than lastElementChild of tower
   else if (
     clickDiscEvent.currentTarget.id == "divB" &&
-    placeholderSection.lastElementChild.clientWidth <
-      towerB.lastElementChild.clientWidth
+    placeholderSection.lastElementChild.clientWidth < towerB.lastElementChild.clientWidth
   ) {
     towerB.append(placeholderSection.lastElementChild);
-  } else if (
-    clickDiscEvent.currentTarget.id == "divC" &&
-    towerC.childElementCount < 1
-  ) {
+  } else if (clickDiscEvent.currentTarget.id == "divC" && towerC.childElementCount < 1) {
     towerC.append(placeholderSection.lastElementChild);
   } // check to see if disc div is wider than lastElementChild of tower
   else if (
     clickDiscEvent.currentTarget.id == "divC" &&
-    placeholderSection.lastElementChild.clientWidth <
-      towerC.lastElementChild.clientWidth
+    placeholderSection.lastElementChild.clientWidth < towerC.lastElementChild.clientWidth
   ) {
     towerC.append(placeholderSection.lastElementChild);
   }
